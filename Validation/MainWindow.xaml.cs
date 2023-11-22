@@ -21,12 +21,33 @@ namespace Validation
         public MainWindow()
         {
             InitializeComponent();
-            this.DataContext = new Users();
         }
 
         private void Click_BtnAuthPassword(object sender, RoutedEventArgs e)
         {
-            
+            Users users = new Users()
+            {
+                Login = tbLogin.Text,
+                Email = tbMail.Text,
+                Password = tbPassword.Text,
+                RepPassword = tbRepPassword.Text,
+            };
+
+            var validationRes = new List<System.ComponentModel.DataAnnotations.ValidationResult>();
+            var validationContext = new ValidationContext(users, serviceProvider: null, items: null);
+            bool isValid = Validator.TryValidateObject(users, validationContext, validationRes, validateAllProperties: true);
+
+            if (!isValid)
+            {
+                foreach (var validationResult in validationRes)
+                {
+                    MessageBox.Show(validationResult.ErrorMessage);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Валидация прошла успешно!");
+            }
         }
     }
 }

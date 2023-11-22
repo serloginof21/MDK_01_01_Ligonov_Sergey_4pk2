@@ -25,13 +25,5 @@ namespace Validation
         [Required(ErrorMessage = "Поле не должно быть пустым!")]
         [Compare("Password", ErrorMessage = "Пароли не совпадают")]
         public string RepPassword { get; set; }
-
-        //public Users(string login, string email, string password, string repPassword)
-        //{
-        //    Login = login;
-        //    Email = email;
-        //    Password = password;
-        //    RepPassword = repPassword;
-        //}
     }
 }

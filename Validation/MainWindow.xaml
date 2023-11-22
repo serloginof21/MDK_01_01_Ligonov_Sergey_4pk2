@@ -6,6 +6,23 @@
         xmlns:local="clr-namespace:Validation"
         mc:Ignorable="d"
         Title="Авторизация" Height="550" Width="400">
+    <Window.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="Validation.ErrorTemplate">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <DockPanel>
+                            <Border BorderBrush="Red" BorderThickness="1">
+                                <AdornedElementPlaceholder/>
+                            </Border>
+                            <TextBlock Text="{Binding [0].ErrorContent}" Foreground="Red"/>
+                        </DockPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+    
     <Grid>
         <StackPanel HorizontalAlignment="Center">
             <TextBlock Text="Валидация" FontSize="35" FontWeight="Bold" HorizontalAlignment="Center"/>
