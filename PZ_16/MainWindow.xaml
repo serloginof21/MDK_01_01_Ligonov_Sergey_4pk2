@@ -1,0 +1,23 @@
+﻿<Window x:Class="PZ_16.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PZ_16"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Label Content="Введите имя клиента:" Margin="302,52,365,357" HorizontalAlignment="Center"/>
+        <Label Content="Введите сумму:" Margin="302,116,365,293" HorizontalAlignment="Center"/>
+        <Label Content="Выберите операцию:" Margin="302,187,365,222" HorizontalAlignment="Center"/>
+        <TextBox x:Name="ClientNameTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="308,82,0,0" Width="121"/>
+        <TextBox x:Name="AmountTextBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="308,146,0,0" Width="121"/>
+        <ComboBox x:Name="TransactionTypeComboBox" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="308,217,0,0" Width="98">
+            <ComboBoxItem>Доход</ComboBoxItem>
+            <ComboBoxItem>Расход</ComboBoxItem>
+        </ComboBox>
+        <Button Content="Отправить Транзакцию" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="302,254,0,0" Click="SendButton_Click"/>
+
+        <TextBlock x:Name="AccountBalanceTextBlock" HorizontalAlignment="Center" Height="50px" Width="300px" VerticalAlignment="Bottom"/>
+    </Grid>
+</Window>
